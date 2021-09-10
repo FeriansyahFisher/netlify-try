@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Males Broo
+                    Welcome Broo
                 </div>
 
                 <div class="links">
