@@ -61,7 +61,7 @@ class PegawaiController extends Controller
         //hapus pegawai dari idnya
         DB::table('pegawai')->where('pegawai_id',$request->id)->delete();
         //kembali ke pegawai
-        return redirect('/pegawai');git add 
+        return redirect('/pegawai');
     }
 
     public function formulir(){
