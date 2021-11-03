@@ -15,6 +15,13 @@
 	<h2>www.malasngoding.com</h2>
 	<h3>Data Pegawai</h3>
 
+	<p>Cari Data</p>
+	<form action="/pegawai/cari" method="GET">
+		<input type="text" name="cari" placeholder="Cari nama pegawai..." value="{{ old('cari')}}">
+		<input type="submit" value="CARI">
+	</form>
+	<br />
+
 	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
 	
 	<br/>
@@ -45,10 +52,10 @@
 	<br />
 	Halaman : {{ $pegawai->currentPage()}} <br />
 	Jumlah Data : {{ $pegawai->total()}}<br />
-	Data per Halaman :{{$pegawai->perPage()}}<br />
+	@if ($cari=="0")
+		Data per Halaman :{{$pegawai->perPage()}}<br />
+	@endif
 
 	{{$pegawai->links()}}
-
-
 </body>
 </html>

@@ -16,7 +16,7 @@ class PegawaiController extends Controller
         $pegawai = DB::table('pegawai')->paginate(10);
  
     	// mengirim data pegawai ke view index
-    	return view('index',['pegawai' => $pegawai]);
+    	return view('index',['pegawai' => $pegawai,'cari' =>"0"]);
  
     }
 
@@ -67,6 +67,17 @@ class PegawaiController extends Controller
         return redirect('/pegawai');
     }
 
+    public function cari(Request $request){
+        $cari = $request->cari;
+
+        //mengambil data dari pegawai
+        $pegawai = DB::table('pegawai')
+        ->where('pegawai_nama','like',"%".$cari."%")
+        ->paginate();
+
+        return view('index',['pegawai'=> $pegawai, 'cari'=>"1"]);
+    }
+
     public function formulir(){
 
         return view('formulir');
@@ -79,5 +90,3 @@ class PegawaiController extends Controller
 
     }
 }
-
-// tutor sampai 6 awal
