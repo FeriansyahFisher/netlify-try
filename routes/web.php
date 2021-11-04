@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('/pegawai');
-});
+Route::get('/', 'LandingController@index');
 
 Route::get('/blog', 'BlogController@home');
 Route::get('/blog/tentang', 'BlogController@tentang');
